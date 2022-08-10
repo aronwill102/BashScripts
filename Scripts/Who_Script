@@ -1,0 +1,26 @@
+   #!/bin/bash
+   #  add an indication of the exit code
+   #======================================
+   trap '' 2       # trap!
+   while true
+   do
+     echo "-------Menu--------"
+     echo "Enter 1 to list users.    1:"
+     echo "Enter 2 to show calendar. 2:"
+    echo "Enter q to exit.          3:"
+    echo -e "\n"
+    echo -e "Enter your selection \c"
+    read answer
+    case "$answer" in
+    1) who |more
+      uptime;;
+    2) cal ;;
+    q) exit ;;
+esac
+echo -e "Enter return to continue \c"
+read input
+done
+ 
+echo -e "Exit Code: " $?                # see page 394 in TLCL text
+~
+~
